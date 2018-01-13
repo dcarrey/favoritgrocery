@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite grocery</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+ 
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+    <!-- Optionally, include either the iOS or Android theme -->
+    <!-- <link href="css/ratchet-theme-ios.css" rel="stylesheet"> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <!-- <script src="js/scan.js"></script> -->
+	<!-- <script src="js/footer.js"></script>  -->
+    <!-- <script src="js/searchNewCode.js"></script>    -->
+	<script src="js/index.js"></script>
+
+ <!-- finger in chrome -->
+  <script src="js/FingerBlaster.js"></script>    
+ <script type="text/javascript">
+// <![CDATA[
+    var fb = new FingerBlast ('body');
+// ]]>
+</script>
+ 
+ 
+  </head>
+    <body>
+    <!-- Make sure all your bars are the first things in your <body> -->
+   <header style="margin:0px;background-color: rgb(250, 229, 7);" class="bar bar-nav">      
+        
+	   <h1 class="title">Favorite grocery</h1>	 
+    </header>
+
+  <div class="bar bar-standard bar-header-secondary">
+      <form>
+        <div style="display:inline"><input style="border-radius:0px;width:72%;" type="search" placeholder="Search for product or barcode">
+		<button class="btn" style="margin-top: -5px;border: 0px;">
+		<span class="icon icon-search"></span> 
+		</button>
+		</div>
+      </form>
+    </div> 
+
+	 <nav id="footer" class="bar bar-tab" style="background-color: rgb(0, 0, 0);">
+			<a id="idlist" class="tab-item active" href="favorite.html">				
+				<span class="icon glyphicon glyphicon-shopping-cart"></span>				
+				<span class="tab-label">List</span>
+			</a>
+			<a id="idhistory" class="tab-item" href="history.html"   data-ignore="push" data-transition="slide-in">
+				<span id="historyButton" class="icon glyphicon glyphicon-star-empty"></span>
+				<span class="tab-label">History</span>
+			</a>
+			<a  class="tab-item" href="scan.html"  data-transition="slide-in">
+				<span id="scanButton" class="icon glyphicon glyphicon-barcode"  ></span>
+				<span  class="tab-label" >Scan</span> 
+			</a>
+			<a class="tab-item" href="localisation.html">
+				<span id="locationButton" class="icon glyphicon glyphicon-map-marker"></span>  
+				<span class="tab-label">Localisation</span>
+			</a>
+			<a class="tab-item"  href="#settingsModal">
+				<span class="icon glyphicon glyphicon-cog"></span>
+				<span class="tab-label">Settings</span>
+			</a>	
+	</nav> 	
+
+    <div class="content">
+		<div class="content-padded">
+			<div class="card">
+			  <ul class="table-view">
+				<li  style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >		
+				<br>	
+				<center>Welcome</center>
+				<br>
+				</li>
+				<li style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >
+				<center style="padding-left: 5px;padding-right: 5px;">Your grocery list is presently empty.<br>
+				
+				Use the scan button to add new products or search for a product using the search function above.
+				
+				</center>
+				</li>
+				<li style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);">
+				<br>
+				<center><a class="btn btn-negative"  href="scan.html" data-ignore="push" data-transition="slide-up"><span id="scanButton" class="icon glyphicon glyphicon-barcode" ></span>&nbsp;<br>Scan now</a></center> 
+				<br>
+				</li>
+			  </ul>
+			  </div>
+			  <div class="card">			 
+			   <ul class="table-view">
+			   <li  style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >		
+				<br>	
+				<center>Visit our website: mygrocerytour.com</center>
+				<br>
+				</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+     <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+      <header style="margin:0px;background-color: rgb(250, 229, 7);" class="bar bar-nav">
+        <a style="color:black" class="icon icon-close pull-right" href="#settingsModal"></a>
+        <h1 class="title">App settings</h1>
+      </header>
+
+      <div class="content">
+        <form class="input-group">
+          <input type="text" placeholder="Full name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Username">
+        </form>
+
+        <h5 class="content-padded">App settings</h5>
+
+        <ul class="table-view">
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-sound"></span>
+            <div class="media-body">
+              Enable sounds
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-person"></span>
+            <div class="media-body">
+              Parental controls
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="content-padded">
+          <button class="btn btn-positive btn-block">Save settings</button>
+        </div>
+      </div>
+    </div>
+    
+	
+      <script>
+		//--Start the app and validate some data...
+		//function startit(){	
+		//if(historyValidator()){
+			//--Change to list here... (Etienne)
+		//	window.location.href="history.html";
+		//	}
+		//else {			
+		//	window.location.href="scan.html";
+		//	};
+		//};  		
+		//startit();
+		
+	</script>        
+</body>
+</html>
